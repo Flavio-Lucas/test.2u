@@ -10,13 +10,13 @@
         Home
       </li>
       <li class="navbar--container--menu--item"
-          [class.navbar--container--menu--item--selected]="currentNavbarState === navbarState.ESTABLISHMENT"
-          (click)="onNavigate(navbarState.ESTABLISHMENT, '/main/establishment')">
+          [class.navbar--container--menu--item--selected]="currentNavbarState === navbarState.DELIVERY"
+          (click)="onNavigate(navbarState.DELIVERY, '/main/collaborator')">
         Quero ser um parceiro de entregas!
       </li>
       <li class="navbar--container--menu--item"
-          [class.navbar--container--menu--item--selected]="currentNavbarState === navbarState.DELIVERY"
-          (click)="onNavigate(navbarState.DELIVERY, '/main/collaborator')">
+          [class.navbar--container--menu--item--selected]="currentNavbarState === navbarState.ESTABLISHMENT"
+          (click)="onNavigate(navbarState.ESTABLISHMENT, '/main/establishment')">
         Quero cadastrar meu estabelecimento!
       </li>
     </ul>

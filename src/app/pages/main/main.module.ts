@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import { HomePageModule } from '../../components/navbar/navbar.module';
+import { NavbarModule } from '../../components/navbar/navbar.module';
 
 import { MainPageRoutingModule } from './main-routing.module';
 
@@ -15,7 +15,7 @@ import { MainPage } from './main.page';
     FormsModule,
     IonicModule,
     MainPageRoutingModule,
-    HomePageModule,
+    NavbarModule,
   ],
   declarations: [MainPage]
 })

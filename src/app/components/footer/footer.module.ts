@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-import { NavbarComponent } from './navbar.component';
+import { FooterComponent } from './footer.component';
 
 @NgModule({
   imports: [
@@ -12,10 +12,10 @@ import { NavbarComponent } from './navbar.component';
     RouterModule
   ],
   declarations: [
-    NavbarComponent
+    FooterComponent
   ],
   exports: [
-    NavbarComponent
+    FooterComponent
   ]
 })
-export class NavbarModule {}
+export class FooterModule {}

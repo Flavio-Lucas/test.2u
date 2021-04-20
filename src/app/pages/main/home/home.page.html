@@ -1,9 +1,77 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="home">
+  <div class="home--header">
+    <div class="home--header--container">
+      <div class="home--header--container--left">
+        <div class="home--header--container--left--phone">
+          <img src="assets/imgs/smart-phone.png" alt="smart phone">
+        </div>
+        Baixe agora nosso app!
+        <div class="home--header--container--left--stores">
+          <img src="assets/imgs/apple-store.svg" alt="botão para a apple store">
+          <img src="assets/imgs/google-play.png" alt="botão para a google play">
+        </div>
+      </div>
+      <div class="home--header--container--right">
+        <div class="home--header--container--right--top">
+          <img src="assets/imgs/black-logo.png">
+          Para todo pedido Uma entrega!
+        </div>
+        <div class="home--header--container--right--bottom">
+          <p>Aplicativo de compras de fácil usabilidade, tanto para o lojista quanto para nossos usuários. O app é bem intuitivo, com cores leves que ajudam os usuários no momentos da decisão de compra. Delivery2U foi desenvolvido para ajudar as empresas a aumentarem suas vendas e ajudar os usuários a realizarem compras no conforto da sua casa/escritório encontrando estabelecimentos com preços justos que possam realizar a entrega com maior segurança e pontualidade.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<ion-content>
+  <div class="home--container">
+    <div class="home--container--side left">
+      <img src="assets/imgs/side1.png">
+      <img src="assets/imgs/side2.png">
+    </div>
+    <div class="home--container--main">
+      <div class="home--container--main--circles">
+        <div class="home--container--main--circles--item">
+          <div class="home--container--main--circles--item--circle"></div>
+          Lorem Ipsom
+        </div>
+        <div class="home--container--main--circles--item">
+          <div class="home--container--main--circles--item--circle"></div>
+          Lorem Ipsom
+        </div>
+        <div class="home--container--main--circles--item">
+          <div class="home--container--main--circles--item--circle"></div>
+          Lorem Ipsom
+        </div>
+      </div>
 
-</ion-content>
+      <span class="home--container--main--title">Lorem ipsum dolor sit amet, consectetur</span>
+
+      <div class="home--container--main--users">
+        <ng-container *ngFor="let i of [1, 2, 3]">
+          <div class="home--container--main--users--user">
+            <div class="home--container--main--users--user--img">
+              <img [src]="'assets/imgs/user'+i+'.png'">
+            </div>
+            <div class="home--container--main--users--user--details">
+              <span>User User</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris finibus ligula a ornare tincidunt. Orci varius natoque penatibus et magnis dis parturient montes.</p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="home--container--main--download">
+        <span class="home--container--main--download--title">Baixe agora nosso app!</span>
+        <div class="home--container--main--download--stores">
+          <img src="assets/imgs/google-play.png">
+          <img src="assets/imgs/apple-store.svg">
+        </div>
+      </div>
+    </div>
+    <div class="home--container--side right">
+      <img src="assets/imgs/side1.png">
+      <img src="assets/imgs/side2.png">
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

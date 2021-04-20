@@ -1,0 +1,193 @@
+.home {
+  height: calc(100vh - 7.5rem);
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  &--header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../../../../assets/imgs/bg1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &--container {
+      padding: 40px;
+      max-width: 1000px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 auto;
+
+      &--left {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: 5rem;
+
+        font-size: 3.2rem;
+        font-weight: bold;
+
+        &--phone {
+          width: 39rem;
+        }
+        &--stores {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 4.5rem;
+          width: 100%;
+
+          img {
+            width: 12rem;
+          }
+        }
+      }
+      &--right {
+        width: 50%;
+
+        &--top {
+          display: flex;
+          align-items: center;
+          font-size: 3.4rem;
+          text-align: center;
+          font-weight: 900;
+          font-family: sans-serif Roboto;
+
+          img {
+            width: 12rem;
+          }
+        }
+        &--bottom {
+          font-size: 2rem;
+          margin-top: 2rem;
+          text-align: justify;
+        }
+      }
+    }
+  }
+
+  &--container {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+
+    &--side {
+      width: 200%;
+
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .right {
+      margin-right: -20rem;
+      transform: translateX(20rem);
+    }
+    .left {
+      margin-left: -20rem;
+      transform: translateX(-25rem);
+    }
+    &--main {
+      min-width: 100rem;
+      max-width: 100rem;
+
+      &--title {
+        display: block;
+        width: 100%;
+        margin: 4rem 0;
+        font-size: 4.8rem;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      &--circles {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 6rem;
+        margin-bottom: 2rem;
+
+        &--item {
+          text-align: center;
+          font-size: 4rem;
+          max-width: 25rem;
+
+          &--circle {
+            width: 25rem;
+            margin: 0 auto;
+            height: 25rem;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 3px 10px rgb(0, 0, 0, .2);
+          }
+        }
+      }
+
+      &--users {
+
+        &--user {
+          &:nth-child(2n) {
+            flex-direction: row-reverse;
+            text-align: right;
+            .home--container--main--users--user--img {
+              margin-left: 2rem;
+              margin-right: 0;
+            }
+          }
+          padding: 4rem;
+          background-color: var(--to-u-dark);
+          border-radius: 5.6rem;
+          margin-bottom: 4rem;
+          display: flex;
+          align-items: center;
+
+          &--img {
+            overflow: hidden;
+            min-width: 20rem;
+            max-width: 20rem;
+            height: 20rem;
+            margin-right: 2rem;
+            border-radius: 50%;
+          }
+          &--details {
+            font-size: 2.8rem;
+
+            span {
+              font-size: 3rem;
+              color: var(--to-u-yellow);
+            }
+            p {
+              color: #D4D4D4;
+            }
+          }
+        }
+      }
+      &--download {
+        margin: 0 auto;
+        width: fit-content;
+
+        &--title {
+          font-size: 4rem;
+          font-weight: bold;
+          margin: 2rem 0;
+        }
+
+        &--stores {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 3rem 0;
+          width: 100%;
+
+          img {
+            width: 15rem;
+          }
+        }
+      }
+    }
+  }
+}

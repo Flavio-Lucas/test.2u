@@ -1,9 +1,57 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>collaborator</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="delivery">
+  <div class="delivery--header">
+    <img src="assets/imgs/delivery.svg">
+  </div>
 
-<ion-content>
+  <div class="delivery--container">
+    <div class="delivery--container--side left">
+      <img src="assets/imgs/side1.png">
+      <img src="assets/imgs/side2.png">
+    </div>
 
-</ion-content>
+    <div class="delivery--container--main">
+      <div class="delivery--container--main--title">Faça seu cadastro e comece fazer suas entregas!</div>
+      <form class="delivery--container--main--form" [formGroup]="formGroup">
+        <div class="delivery--container--main--form--title">Dados pessoais</div>
+        <input type="text" placeholder="Nome">
+        <input type="text" placeholder="Sobrenome">
+        <input type="text" placeholder="Email">
+        <input type="text" placeholder="Senha">
+        <input type="text" placeholder="Confirmar senha">
+        <input type="text" placeholder="Celular">
+        <input type="text" placeholder="RG">
+        <input type="text" placeholder="CNPJ">
+        <input type="text" placeholder="Cidade de atuação">
+        <div class="delivery--container--main--form--title">Dados Bancários</div>
+        <input type="text" placeholder="Banco">
+        <input type="text" placeholder="Tipo de conta">
+        <input type="text" placeholder="Agencia">
+        <input type="text" placeholder="Nome">
+        <input type="text" placeholder="CPF">
+        <div class="delivery--container--main--form--title">Dados do veiculo</div>
+        <input type="text" placeholder="Tipo de veiculo">
+        <input type="text" placeholder="Cor do veiculo">
+        <input type="text" placeholder="Placa do veiculo">
+        <input type="text" placeholder="Foto da habilitação">
+        <input type="text" placeholder="Foto do documento do veiculo">
+        <input type="text" placeholder="Sua foto com a CNH">
+
+        <div class="align">
+          <input #terms type="checkbox"><span>Li e aceito os <span class="yellow">Termos do contrato</span></span>
+        </div>
+
+        <div class="submit" (click)="onSubmit()">
+          Enviar
+        </div>
+
+        <span *ngIf="error">Ocorreu um erro, verifique as informações e tente novamente</span>
+      </form>
+    </div>
+
+    <div class="delivery--container--side right">
+      <img src="assets/imgs/side1.png">
+      <img src="assets/imgs/side2.png">
+    </div>
+  </div>
+
+</div>
