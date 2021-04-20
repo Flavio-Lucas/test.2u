@@ -1,8 +1,24 @@
 <div class="navbar">
-  <div class="navbar--logo">
-    <img src="../../../assets/imgs/logo.png"/>
+  <div class="navbar--container">
+    <div class="navbar--container--logo">
+      <img src="../../../assets/imgs/logo.png" alt="Logo"/>
+    </div>
+    <ul class="navbar--container--menu">
+      <li class="navbar--container--menu--item"
+          [class.navbar--container--menu--item--selected]="currentNavbarState === navbarState.HOME"
+          (click)="onNavigate(navbarState.HOME, '/main/home')">
+        Home
+      </li>
+      <li class="navbar--container--menu--item"
+          [class.navbar--container--menu--item--selected]="currentNavbarState === navbarState.ESTABLISHMENT"
+          (click)="onNavigate(navbarState.ESTABLISHMENT, '/main/establishment')">
+        Quero ser um parceiro de entregas!
+      </li>
+      <li class="navbar--container--menu--item"
+          [class.navbar--container--menu--item--selected]="currentNavbarState === navbarState.DELIVERY"
+          (click)="onNavigate(navbarState.DELIVERY, '/main/collaborator')">
+        Quero cadastrar meu estabelecimento!
+      </li>
+    </ul>
   </div>
-  <ul>
-    <li routerlink="" >HOME</li>
-  </ul>
 </div>

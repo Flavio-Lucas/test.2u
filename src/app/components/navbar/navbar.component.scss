@@ -1,0 +1,43 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--to-u-dark);
+
+  width: 100vw;
+  height: 7.5rem;
+
+  &--container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 140rem;
+    width: 90%;
+
+    &--logo {
+      img {
+        height: 4rem;
+        min-width: 6.2rem;
+      }
+    }
+
+    &--menu {
+      color: var(--to-u-gray);
+      font-size: 1.8rem;
+      list-style: none;
+      display: flex;
+
+      &--item {
+        margin-right: 2rem;
+        cursor: pointer;
+        transition: color .2s;
+
+        &--selected {
+          color: var(--to-u-yellow);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
