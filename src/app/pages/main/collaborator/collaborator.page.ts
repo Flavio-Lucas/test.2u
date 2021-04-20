@@ -42,7 +42,7 @@ export class CollaboratorPage {
       vehicle: ['', Validators.required],
       vehicleColor: ['', Validators.required],
       board: ['', Validators.required],
-      cnh: ['', Validators.required],
+      cnh: ['', Validators.required], // infelizmente não consegui implementar a parte de pegar as imagens
       vehicleDoc: ['', Validators.required],
       photo: ['', Validators.required],
 
@@ -65,12 +65,16 @@ export class CollaboratorPage {
   /**
    * Atributo que informa caso algum erro tenha ocorrido no cadastro
    */
-  public error: boolean;
+  public error: boolean = false;
 
   public async onSubmit() {
     if (this.formGroup.invalid){
+      console.log('invalido');
+      this.error = true;
       return;
     }
+
+    console.log(this.formGroup.getRawValue());
 
     const payload = this.formGroup.getRawValue();
 

@@ -13,38 +13,38 @@
       <div class="delivery--container--main--title">Faça seu cadastro e comece fazer suas entregas!</div>
       <form class="delivery--container--main--form" [formGroup]="formGroup">
         <div class="delivery--container--main--form--title">Dados pessoais</div>
-        <input type="text" placeholder="Nome">
-        <input type="text" placeholder="Sobrenome">
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Senha">
-        <input type="text" placeholder="Confirmar senha">
-        <input type="text" placeholder="Celular">
-        <input type="text" placeholder="RG">
-        <input type="text" placeholder="CNPJ">
-        <input type="text" placeholder="Cidade de atuação">
+        <input type="text" placeholder="Nome" formControlName="firstName">
+        <input type="text" placeholder="Sobrenome" formControlName="secondName">
+        <input type="text" placeholder="Email" formControlName="email">
+        <input type="text" placeholder="Senha" formControlName="password">
+        <input type="text" placeholder="Confirmar senha" formControlName="confirmPassword">
+        <input type="text" placeholder="Celular" formControlName="phone">
+        <input type="text" placeholder="RG" formControlName="rg">
+        <input type="text" placeholder="CNPJ" formControlName="cnpj">
+        <input type="text" placeholder="Cidade de atuação" formControlName="city">
         <div class="delivery--container--main--form--title">Dados Bancários</div>
-        <input type="text" placeholder="Banco">
-        <input type="text" placeholder="Tipo de conta">
-        <input type="text" placeholder="Agencia">
-        <input type="text" placeholder="Nome">
-        <input type="text" placeholder="CPF">
+        <input type="text" placeholder="Banco" formControlName="bank">
+        <input type="text" placeholder="Tipo de conta" formControlName="accountType">
+        <input type="text" placeholder="Agencia" formControlName="agency">
+        <input type="text" placeholder="Nome" formControlName="name">
+        <input type="text" placeholder="CPF" formControlName="cpf">
         <div class="delivery--container--main--form--title">Dados do veiculo</div>
-        <input type="text" placeholder="Tipo de veiculo">
-        <input type="text" placeholder="Cor do veiculo">
-        <input type="text" placeholder="Placa do veiculo">
-        <input type="text" placeholder="Foto da habilitação">
-        <input type="text" placeholder="Foto do documento do veiculo">
-        <input type="text" placeholder="Sua foto com a CNH">
+        <input type="text" placeholder="Tipo de veiculo" formControlName="vehicle">
+        <input type="text" placeholder="Cor do veiculo" formControlName="vehicleColor">
+        <input type="text" placeholder="Placa do veiculo" formControlName="board">
+        <input type="text" placeholder="Foto da habilitação" formControlName="cnh">
+        <input type="text" placeholder="Foto do documento do veiculo" formControlName="vehicleDoc">
+        <input type="text" placeholder="Sua foto com a CNH" formControlName="photo">
 
         <div class="align">
-          <input #terms type="checkbox"><span>Li e aceito os <span class="yellow">Termos do contrato</span></span>
+          <input formControlName="terms" type="checkbox"><span>Li e aceito os <span class="yellow">Termos do contrato</span></span>
         </div>
 
         <div class="submit" (click)="onSubmit()">
           Enviar
         </div>
 
-        <span *ngIf="error">Ocorreu um erro, verifique as informações e tente novamente</span>
+        <span *ngIf="error" style="color: white">Ocorreu um erro, estamos sem api</span>
       </form>
     </div>
 

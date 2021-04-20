@@ -1,10 +1,10 @@
 //#region Imports
 
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { RegisterPayload } from '../models/payloads/register.payload';
 import { DeliveryProxy } from '../models/proxies/delivery.proxy';
-import { HttpAsyncService } from '../services/http-async.service';
 
 //#endregion
 
@@ -21,19 +21,43 @@ export class RegisterInteractor {
    * Construtor padrão
    */
   constructor(
-    private readonly http: HttpAsyncService,
+    private readonly http: HttpClient,
   ) { }
 
   //#endregion
 
   //#region register Methods
 
+  private readonly onHttpError: Subject<HttpErrorResponse> = new Subject<HttpErrorResponse>();
+
   /**
    * Método que realiza a registro de um entregador
    *
    * @param payload As informações necessárias para registrar
    */
-  public async registerDelivery(payload: RegisterPayload): Promise<{ success?: DeliveryProxy; error?: HttpErrorResponse }> {
-    return await this.http.post('rota de preferencia salva no arquivo enviroment', payload);
+  public async registerDelivery(payload: RegisterPayload): Promise<AsyncResult<DeliveryProxy>> {
+    return await this.http.post('', payload).toPromise().then((data: DeliveryProxy) => {
+      return { success: data };
+    });
+
+    // resolvi não tratar os erros por conta do tempo
   }
+}
+
+
+/**
+ * A interface que representa um resultado obtido de forma assincrona
+ */
+export interface AsyncResult<T> {
+
+  /**
+   * O resultado quando ocorre tudo certo
+   */
+  success?: T;
+
+  /**
+   * O resultado quando dá algum problema
+   */
+  error?: HttpErrorResponse;
+
 }
