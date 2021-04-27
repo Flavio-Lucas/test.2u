@@ -1,9 +1,59 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>establishment</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="establishment">
+  <div class="establishment--header">
+    <img src="assets/imgs/colab.svg">
+  </div>
 
-<ion-content>
+  <div class="establishment--container">
+    <div class="establishment--container--side left">
+      <img src="assets/imgs/side1.png">
+      <img src="assets/imgs/side2.png">
+    </div>
 
-</ion-content>
+    <div class="establishment--container--main">
+      <div class="establishment--container--main--title">Faça seu cadastro e comece fazer suas entregas!</div>
+      <form [formGroup]="formGroup" class="establishment--container--main--form">
+
+        <div class="establishment--container--main--form--title">Dados pessoais</div>
+        <input type="text" placeholder="Nome" formControlName="firstName">
+        <input type="text" placeholder="Sobrenome" formControlName="secondName">
+        <input type="text" placeholder="Email" formControlName="email">
+        <input type="text" placeholder="CPF" formControlName="cpf">
+        <input type="text" placeholder="RG" formControlName="rg">
+
+        <div class="establishment--container--main--form--title">Dados do estabelecimento</div>
+        <input type="text" placeholder="CNPJ" formControlName="cnpj">
+        <input type="text" placeholder="Nome do responsavel" formControlName="accountable">
+        <input type="text" placeholder="Estado" formControlName="state">
+        <input type="text" placeholder="Cidade" formControlName="city">
+        <input type="text" placeholder="Email" formControlName="secondEmail">
+        <input type="text" placeholder="Celular" formControlName="phone">
+        <input type="text" placeholder="Ramo de atuação" formControlName="business">
+        <select formControlName="motoboy">
+          <option value="" disabled selected hidden>Tem motoboy proprio?</option>
+          <option>Sim</option>
+          <option>Não</option>
+        </select>
+        <select formControlName="delivery">
+          <option value="" disabled selected hidden>Atua com outro delivery?</option>
+          <option>Sim</option>
+          <option>Não</option>
+        </select>
+
+        <div class="align">
+          <input formControlName="terms" type="checkbox"><span>Li e aceito os <span class="yellow">Termos do contrato</span></span>
+        </div>
+
+        <div class="submit" (click)="onSubmit()">
+          Enviar
+        </div>
+
+        <span *ngIf="error" style="color: white">Ocorreu um erro, estamos sem api</span>
+      </form>
+    </div>
+
+    <div class="establishment--container--side right">
+      <img src="assets/imgs/side1.png">
+      <img src="assets/imgs/side2.png">
+    </div>
+  </div>
+</div>
