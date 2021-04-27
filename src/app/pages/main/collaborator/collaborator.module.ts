@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
+import { FooterModule } from '../../../components/footer/footer.module';
 
 import { CollaboratorPageRoutingModule } from './collaborator-routing.module';
 
@@ -15,6 +16,7 @@ import { CollaboratorPage } from './collaborator.page';
     IonicModule,
     CollaboratorPageRoutingModule,
     ReactiveFormsModule,
+    FooterModule,
   ],
   declarations: [CollaboratorPage]
 })

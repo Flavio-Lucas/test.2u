@@ -29,9 +29,11 @@
       display: flex;
 
       &--item {
-        margin-right: 2rem;
+        margin: 0 1rem 1.5rem;
         cursor: pointer;
         transition: color .2s;
+        list-style: none;
+        text-align: center;
 
         &--selected {
           color: var(--to-u-yellow);
@@ -39,5 +41,54 @@
         }
       }
     }
+  }
+}
+
+.toggle-menu {
+
+}
+
+.toggle-dropdown {
+  display: none;
+
+  &--menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--to-u-dark);
+    color: var(--to-u-gray);
+    font-size: 2rem;
+    overflow: hidden;
+    height: 0;
+    position: absolute;
+    top: 7.5rem;
+    left: 0;
+    width: 100%;
+    transition: height 10s;
+  }
+
+  ion-icon {
+    color: white;
+    font-size: 4rem;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: .5rem;
+
+    &:active {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  #checkbox:checked ~ .toggle-dropdown--menu{
+    height: fit-content;
+  }
+  .toggle-dropdown {
+    display: initial;
+  }
+  .toggle-menu {
+    display: none;
   }
 }

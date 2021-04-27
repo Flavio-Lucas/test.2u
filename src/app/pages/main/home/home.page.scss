@@ -3,6 +3,9 @@
   width: 100vw;
   overflow-y: auto;
   overflow-x: hidden;
+
+  @extend .scrollbar-vertical;
+
   &--header {
     display: flex;
     align-items: center;
@@ -191,3 +194,127 @@
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .home {
+    &--header {
+      &--container {
+        flex-direction: column;
+        align-items: center;
+
+        &--left {
+          margin: 2rem auto;
+          width: 100%;
+          //font-size: 2rem;
+
+          &--phone {
+            width: 100%;
+            max-width: 50rem;
+            img {
+              width: 100%;
+              margin: 0 auto;
+            }
+          }
+
+          &--stores {
+            justify-content: space-around;
+          }
+        }
+        &--right {
+          width: 100%;
+          margin: 2rem auto;
+          text-align: center;
+
+          &--top {
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+    &--container {
+      &--side {
+        display: none;
+      }
+      &--main {
+        min-width: 90%;
+        max-width: 90%;
+        margin: 0 auto;
+
+        &--download {
+          &--title {
+            display: block;
+            text-align: center;
+          }
+        }
+
+        &--title {
+          font-size: 12vw;
+        }
+
+        &--circles {
+          &--item {
+            font-size: 5.5vw;
+            &--circle {
+              width: 22vw;
+              height: 22vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.scrollbar-vertical {
+  &::-webkit-scrollbar {
+    display: initial !important;
+    width: .5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background-color: var(--to-u-yellow);
+  }
+}
+
+@media (max-width: 800px) {
+  .home {
+    &--container {
+      &--main {
+        &--users {
+          &--user {
+            flex-direction: column !important;
+            text-align: center !important;
+            border-radius: 2rem;
+
+            &--img {
+              margin: 0 0 2rem !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .home {
+    &--container {
+      &--main {
+        max-width: 100%;
+        &--users {
+          &--user {
+            margin: 0;
+            width: 100%;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -6,6 +6,7 @@
   height: 24rem;
   padding: 5rem;
   font-size: 2.2rem;
+  width: 100%;
 
   &--container {
     display: flex;
@@ -19,6 +20,27 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .footer {
+    display: block;
+    text-align: center;
+    height: fit-content;
+
+    &--container {
+      display: block;
+      min-width: 100%;
+      height: fit-content;
+  
+      &--row {
+        display: block;
+        div{
+          margin-bottom: 1rem;
+        }
+      }
     }
   }
 }

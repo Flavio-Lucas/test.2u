@@ -1,9 +1,9 @@
 <div class="navbar">
   <div class="navbar--container">
     <div class="navbar--container--logo">
-      <img src="../../../assets/imgs/logo.png" alt="Logo"/>
+      <img src="../../../assets/imgs/logo.png" routerLink="/main/home" alt="Logo"/>
     </div>
-    <ul class="navbar--container--menu">
+    <ul class="navbar--container--menu toggle-menu">
       <li class="navbar--container--menu--item"
           [class.navbar--container--menu--item--selected]="currentNavbarState === navbarState.HOME"
           (click)="onNavigate(navbarState.HOME, '/main/home')">
@@ -20,5 +20,29 @@
         Quero cadastrar meu estabelecimento!
       </li>
     </ul>
+
+    <div class="toggle-dropdown">
+      <input class="d-none" id="checkbox" type="checkbox">
+      <label for="checkbox">
+        <ion-icon name="menu"></ion-icon>
+      </label>
+      <ul class="toggle-dropdown--menu">
+        <li class="navbar--container--menu--item"
+            [class.navbar--container--menu--item--selected]="currentNavbarState === navbarState.HOME"
+            (click)="onNavigate(navbarState.HOME, '/main/home')">
+          Home
+        </li>
+        <li class="navbar--container--menu--item"
+            [class.navbar--container--menu--item--selected]="currentNavbarState === navbarState.DELIVERY"
+            (click)="onNavigate(navbarState.DELIVERY, '/main/collaborator')">
+          Quero ser um parceiro de entregas!
+        </li>
+        <li class="navbar--container--menu--item"
+            [class.navbar--container--menu--item--selected]="currentNavbarState === navbarState.ESTABLISHMENT"
+            (click)="onNavigate(navbarState.ESTABLISHMENT, '/main/establishment')">
+          Quero cadastrar meu estabelecimento!
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
