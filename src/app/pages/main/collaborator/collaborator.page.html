@@ -16,8 +16,8 @@
         <input type="text" placeholder="Nome" formControlName="firstName">
         <input type="text" placeholder="Sobrenome" formControlName="secondName">
         <input type="text" placeholder="Email" formControlName="email">
-        <input type="text" placeholder="Senha" formControlName="password">
-        <input type="text" placeholder="Confirmar senha" formControlName="confirmPassword">
+        <input type="password" placeholder="Senha" formControlName="password">
+        <input type="password" placeholder="Confirmar senha" formControlName="confirmPassword">
         <input type="text" placeholder="Celular" formControlName="phone">
         <input type="text" placeholder="RG" formControlName="rg">
         <input type="text" placeholder="CNPJ" formControlName="cnpj">
@@ -32,9 +32,24 @@
         <input type="text" placeholder="Tipo de veiculo" formControlName="vehicle">
         <input type="text" placeholder="Cor do veiculo" formControlName="vehicleColor">
         <input type="text" placeholder="Placa do veiculo" formControlName="board">
-        <input type="text" placeholder="Foto da habilitação" formControlName="cnh">
-        <input type="text" placeholder="Foto do documento do veiculo" formControlName="vehicleDoc">
-        <input type="text" placeholder="Sua foto com a CNH" formControlName="photo">
+
+        <label class="input" for="cnhInput">
+          <span id="cnhInputText">Foto da habilitação</span>
+          <ion-icon src="assets/imgs/file.svg"></ion-icon>
+        </label>
+        <input class="d-none" (change)="onUploadImage($event)" id="cnhInput" type="file"><!-- cnh -->
+
+        <label class="input" for="vehicleDocInput">
+          <span id="vehicleDocInputText">Foto do documento do veiculo</span>
+          <ion-icon src="assets/imgs/file.svg"></ion-icon>
+        </label>
+        <input class="d-none" (change)="onUploadImage($event)" id="vehicleDocInput" type="file"><!-- vehicleDoc -->
+
+        <label class="input" for="photoInput">
+          <span id="photoInputText">Sua foto com a CNH</span>
+          <ion-icon src="assets/imgs/file.svg"></ion-icon>
+        </label>
+        <input class="d-none" (change)="onUploadImage($event)" id="photoInput" type="file" ><!-- photo -->
 
         <div class="align">
           <input formControlName="terms" type="checkbox"><span>Li e aceito os <span class="yellow">Termos do contrato</span></span>
@@ -44,7 +59,7 @@
           Enviar
         </div>
 
-        <span *ngIf="error" style="color: white">Ocorreu um erro, estamos sem api</span>
+        <span *ngIf="error" style="color: white; text-align: center; width: 100%">Dados invalidos</span>
       </form>
     </div>
 

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>.a {
+      opacity: 0.5;
+    }
+
+    .b {
+      fill: none;
+    }
+
+    .c {
+      fill: #fff;
+    }</style>
+  </defs>
+  <g class="a">
+    <rect class="b" width="24" height="24"/>
+    <path class="c" d="M20,6H12L10,4H4A2,2,0,0,0,2.01,6L2,18a2.006,2.006,0,0,0,2,2H20a2.006,2.006,0,0,0,2-2V8A2.006,2.006,0,0,0,20,6ZM14,16H6V14h8Zm4-4H6V10H18Z"/>
+  </g>
+</svg>

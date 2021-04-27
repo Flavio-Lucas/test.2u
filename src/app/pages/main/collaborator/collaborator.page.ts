@@ -42,7 +42,7 @@ export class CollaboratorPage {
       vehicle: ['', Validators.required],
       vehicleColor: ['', Validators.required],
       board: ['', Validators.required],
-      cnh: ['', Validators.required], // infelizmente não consegui implementar a parte de pegar as imagens
+      cnh: ['', Validators.required],
       vehicleDoc: ['', Validators.required],
       photo: ['', Validators.required],
 
@@ -51,6 +51,21 @@ export class CollaboratorPage {
       validator: MustMatch('password', 'confirmPassword')
     });
   }
+
+  /**
+   * Variavel que recebe a imagem da CNH
+   */
+  public cnhInput: File;
+
+  /**
+   * Variavel que recebe a imagem da documentação do automovel
+   */
+  public vehicleDocInput: File;
+
+  /**
+   * Variavel que recebe a foto da pessoa com a CNH
+   */
+  public photoInput: File;
 
   /**
    * Atributo que guarda as onformações do formulário
@@ -68,13 +83,17 @@ export class CollaboratorPage {
   public error: boolean = false;
 
   public async onSubmit() {
-    if (this.formGroup.invalid){
+
+    if (this.formGroup.invalid || !this.cnhInput || !this.vehicleDocInput || !this.photoInput){
       console.log('invalido');
       this.error = true;
       return;
     }
+    this.formGroup.controls.cnh.setValue(this.uploadImage(this.cnhInput));
+    this.formGroup.controls.vehicleDoc.setValue(this.uploadImage(this.vehicleDocInput));
+    this.formGroup.controls.photo.setValue(this.uploadImage(this.photoInput));
 
-    console.log(this.formGroup.getRawValue());
+    console.log('valido', this.formGroup.getRawValue());
 
     const payload = this.formGroup.getRawValue();
 
@@ -83,6 +102,27 @@ export class CollaboratorPage {
     if (!result) {
       this.error = true;
     }
+  }
+
+  public onUploadImage(event: any): void {
+    console.log(event.target.id);
+
+    if (event.target.id === 'cnhInput')
+      this.cnhInput = event.target.files[0];
+
+    if (event.target.id === 'vehicleDocInput')
+      this.vehicleDocInput = event.target.files[0];
+
+    if (event.target.id === 'photoInput')
+      this.photoInput = event.target.files[0];
+
+    document.querySelector(`#${event.target.id}Text`).innerHTML = event.target.files[0].name;
+    return;
+  }
+
+  public uploadImage(image: File): string {
+    //Chamada do serviço que hospeda a imagem e retorna o link
+    return 'https://braziliex.com/faq/images/verification_doc_01.png';
   }
 
 }
